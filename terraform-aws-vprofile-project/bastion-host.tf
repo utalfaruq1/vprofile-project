@@ -14,6 +14,7 @@ data "aws_ami" "Ubuntu22ami" {
   owners = ["099720109477"] # Canonical
 }
 
+
 resource "aws_instance" "vprofile-bastion" {
   ami                    = data.aws_ami.Ubuntu22ami.id
   instance_type          = "t3.micro"
@@ -24,11 +25,11 @@ resource "aws_instance" "vprofile-bastion" {
 
   tags = {
     Name    = "vprofile-bastion"
-    PROJECT = "vprofile"
+    Project = "Vprofile"
   }
 
   provisioner "file" {
-    content     = templatefile("templates/db-deploy.tmpl", { rds-endpoint = aws_db_instance.vprofile-rds.address, dbuser = var.dbuser, dbpass = var.dbpass })
+    content     = templatefile("templates/db-deploy.tmpl", { rds-endpoint = aws_db_instance.vprofile_rds.address, dbuser = var.dbuser, dbpass = var.dbpass })
     destination = "/tmp/vprofile-dbdeploy.sh"
   }
 
