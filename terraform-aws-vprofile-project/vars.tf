@@ -1,5 +1,6 @@
 variable "AWS_REGION" {
-  default = "us-east-1"
+  description = "AWS region to deploy resources"
+  default     = "us-east-1"
 }
 
 variable "PRIV_KEY_PATH" {
@@ -15,7 +16,7 @@ variable "USERNAME" {
 }
 
 variable "MYIP" {
-  default = "183.83.39.2/32"
+  default = "154.161.173.47/32"
 }
 
 variable "rmquser" {
@@ -61,7 +62,6 @@ variable "Zone3" {
 variable "VpcCIDR" {
   default = "172.21.0.0/16"
 }
-
 
 variable "PubSub1CIDR" {
   default = "172.21.1.0/24"
