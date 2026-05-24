@@ -14,7 +14,6 @@ module "vpc" {
   enable_dns_support      = true
   map_public_ip_on_launch = true
 
-
   tags = {
     Name    = var.VPC_NAME
     Project = var.PROJECT
