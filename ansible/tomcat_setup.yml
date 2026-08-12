@@ -77,7 +77,7 @@
          mode: "a+x"
       when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '6'
 
-    - name: Setup tomcat SVC file on ubuntu 14/15
+    - name: Setup tomcat SVC file on ubuntu 14 and 15
       template:
          src: templates/ubuntu14_15-svcfile.j2
          dest: /etc/init.d/tomcat
